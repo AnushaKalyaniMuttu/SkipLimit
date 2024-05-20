@@ -1,0 +1,9 @@
+
+    Stream<Integer> infiniteStream = Stream.iterate(2, i -> i * 2);
+
+    List<Integer> collect = infiniteStream
+      .skip(3)
+      .limit(5)
+      .collect(Collectors.toList());
+
+    assertEquals(collect, Arrays.asList(16, 32, 64, 128, 256))
